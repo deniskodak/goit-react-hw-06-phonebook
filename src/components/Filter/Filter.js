@@ -48,4 +48,7 @@ const mapDispatchToProps = (dispatch) => ({
   filterContacts: (text) => dispatch(filterContacts(text)),
 });
 
+Filter.propTypes = {
+  filterContacts: PropTypes.func.isRequired,
+};
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

@@ -5,25 +5,6 @@ import Form from "./components/Form";
 import Filter from "./components/Filter";
 
 class App extends Component {
-  // findContact = (array, name) => {
-  //   return array.some(
-  //     (oldContact) => oldContact.name.toLowerCase() === name.toLowerCase()
-  //   );
-  // };
-  // addContact = (name, number) => {
-  //   const contact = {
-  //     id: uuidv4(),
-  //     name: name,
-  //     number: number,
-  //   };
-
-  //   const existContact = this.findContact(this.state.contacts, contact.name);
-
-  //   existContact
-  //     ? alert(`${contact.name} is already in contacts`)
-  //     : this.setState(({ contacts }) => ({ contacts: [...contacts, contact] }));
-  // };
-
   render() {
     return (
       <>

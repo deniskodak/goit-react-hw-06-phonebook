@@ -5,7 +5,7 @@ import styles from "./ContactsList.module.css";
 import { connect } from "react-redux";
 import { deleteContact } from "../../redux/actions/phoneBookActions";
 
-const ContactList = ({ contacts, filter, deleteContact }) => {
+const ContactList = ({ contacts, deleteContact }) => {
   return (
     <ul className={styles.list}>
       {contacts.map((contact) => {
@@ -28,6 +28,7 @@ ContactList.propTypes = {
       id: PropTypes.string.isRequired,
     })
   ).isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };
 
 const getFilteredList = (contacts, filter) => {
