@@ -1,11 +1,10 @@
-import { createStore, combineReducers } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 import phoneBookReducer from "./reducers/phoneBookReducer";
 
-const rootReducer = combineReducers({ contacts: phoneBookReducer });
-
-const store = createStore(
-  rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = configureStore({
+  reducer: {
+    contacts: phoneBookReducer,
+  },
+});
 
 export default store;
