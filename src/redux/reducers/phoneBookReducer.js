@@ -5,7 +5,7 @@ import {
 } from "../types/phoneBookTypes";
 import { combineReducers } from "redux";
 
-const contacts = (state = [], action) => {
+const items = (state = [], action) => {
   switch (action.type) {
     case ADD_CONTACT:
       return [...state, action.payload];
@@ -28,6 +28,6 @@ const filter = (state = "", action) => {
 };
 
 export default combineReducers({
-  contacts,
+  items,
   filter,
 });

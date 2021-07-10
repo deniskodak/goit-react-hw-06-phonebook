@@ -37,8 +37,8 @@ const getFilteredList = (contacts, filter) => {
   );
 };
 
-const mapStateToProps = ({ contacts, filter }, props) => ({
-  contacts: getFilteredList(contacts, filter),
+const mapStateToProps = ({ contacts: { items, filter } }, props) => ({
+  contacts: getFilteredList(items, filter),
 });
 const mapDispatchToProps = (dispatch) => ({
   deleteContact: (id) => dispatch(deleteContact(id)),

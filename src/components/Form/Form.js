@@ -87,8 +87,8 @@ ContactForm.propTypes = {
   addContact: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state, props) => ({
-  contacts: state.contacts,
+const mapStateToProps = ({ contacts: { items } }, props) => ({
+  contacts: items,
 });
 
 const mapDispatchToProps = (dispatch) => ({

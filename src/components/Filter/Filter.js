@@ -40,8 +40,8 @@ class Filter extends Component {
     );
   }
 }
-const mapStateToProps = (state, props) => ({
-  filter: state.filter,
+const mapStateToProps = ({ filter }, props) => ({
+  filter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
