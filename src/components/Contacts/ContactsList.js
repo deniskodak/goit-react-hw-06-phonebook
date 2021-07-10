@@ -1,24 +1,30 @@
 import React from "react";
+
 import Contact from "../Contact";
-import PropTypes from "prop-types";
 import styles from "./ContactsList.module.css";
+import contactAnimation from "./animation/contact.module.css";
+
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { deleteContact } from "../../redux/actions/phoneBookActions";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const ContactList = ({ contacts, deleteContact }) => {
   return (
-    <ul className={styles.list}>
+    <TransitionGroup component="ul" className={styles.list}>
       {contacts.map((contact) => {
         const { id } = contact;
         return (
-          <Contact
-            key={id}
-            contact={contact}
-            onDelete={() => deleteContact(id)}
-          />
+          <CSSTransition key={id} timeout={250} classNames={contactAnimation}>
+            <Contact
+              key={id}
+              contact={contact}
+              onDelete={() => deleteContact(id)}
+            />
+          </CSSTransition>
         );
       })}
-    </ul>
+    </TransitionGroup>
   );
 };
 

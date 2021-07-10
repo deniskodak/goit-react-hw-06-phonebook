@@ -1,15 +1,21 @@
 .label {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 30px 30px;
+  align-items: center;
+}
+
+.label:focus-within {
+  color: rgb(215 163 6 / 75%);
 }
 
 .input {
   padding: 6px 8px;
-  border-radius: 7%;
+  width: 250px;
+  font-size: 22px;
+  border: 4px double rgba(29, 23, 204, 0.55);
+  border-radius: 30%;
   outline: none;
 }
 .input:focus {
-  border-color: #03a9f4;
+  border-color: rgb(215 163 6 / 75%);
 }

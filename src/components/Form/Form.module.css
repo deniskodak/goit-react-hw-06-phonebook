@@ -1,10 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
 .input {
+  width: 250px;
   padding: 6px 8px;
-  border-radius: 7%;
+  text-align: center;
+
+  font-size: 22px;
+  border: 4px double rgba(29, 23, 204, 0.55);
+  border-radius: 30%;
   outline: none;
 }
 .input:focus {
-  border: 2px solid #03a9f4;
+  border-color: rgb(215 163 6 / 75%);
 }
 
 .label {
@@ -12,25 +24,29 @@
   flex-direction: column;
   align-items: flex-start;
 
+  font-weight: 600;
   margin-bottom: 15px;
 }
-
-.form {
-  padding: 30px 30px;
+.label:focus-within {
+  color: rgb(215 163 6 / 75%);
 }
-
 .button {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px 10px;
+
+  color: white;
   background: #03a9f4;
   border-radius: 10%;
-  outline: none;
-  color: white;
-  padding: 6px 10px;
   border-color: #6f97a8;
+  outline: none;
+
   transition: transform 300ms linear;
 }
 .button:focus,
 .button:hover {
-  transform: scale(1.25);
+  transform: scale(1.15);
+  background-color: rgb(215 163 6 / 75%);
 }
 
 .button:active {
