@@ -1,33 +1,33 @@
-import { ADD_CONTACT, DELETE_CONTACT } from "../types/phoneBookTypes";
+import {
+  ADD_CONTACT,
+  DELETE_CONTACT,
+  FILTER_CONTACTS,
+} from "../types/phoneBookTypes";
+import { combineReducers } from "redux";
 
-const initialState = {
-  contacts: {
-    items: [],
-    filter: "",
-  },
-};
-
-function notesReducer(state = initialState, action) {
-    const { items } = state.contacts;
-
+const contacts = (state = [], action) => {
   switch (action.type) {
-      case ADD_CONTACT:
-          const existContact = findContact(state.contacts.items, action.payload.name);
-          
-         return  existContact
-        ? alert(`${action.name} is already in contacts`)
-        : [...state, action.payload];
-      
+    case ADD_CONTACT:
+      return [...state, action.payload];
+
     case DELETE_CONTACT:
       return state.filter((note) => note.id !== action.payload.id);
 
     default:
       return state;
   }
-}
+};
 
+const filter = (state = "", action) => {
+  switch (action.type) {
+    case FILTER_CONTACTS:
+      return (state = action.payload);
+    default:
+      return state;
+  }
+};
 
-const findContact = (array, name) => {
-    return array.some(
-      (oldContact) => oldContact.name.toLowerCase() === name.toLowerCase()
-);
+export default combineReducers({
+  contacts,
+  filter,
+});

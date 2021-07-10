@@ -1,15 +1,8 @@
 import { createStore } from "redux";
-const initialState = {
-  contacts: {
-    items: [],
-    filter: "",
-  },
-};
-
-const reducer = (state = {}, action) => state;
+import phoneBookReducer from "./reducers/phoneBookReducer";
 
 const store = createStore(
-  reducer,
+  phoneBookReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

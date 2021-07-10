@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styles from "./Form.module.css";
+import { addContact } from "../../redux/actions/phoneBookActions";
+import { connect } from "react-redux";
 
 class ContactForm extends Component {
   state = {
@@ -20,13 +22,24 @@ class ContactForm extends Component {
     e.preventDefault();
 
     const { name, number } = this.state;
+    const { contacts } = this.props;
 
-    this.props.onSubmit(name, number);
+    const existContact = this.findContact(contacts, name);
+
+    existContact
+      ? alert(`${name} is already in contacts`)
+      : this.props.addContact(name, number);
 
     this.setState(() => ({
       name: "",
       number: "",
     }));
+  };
+
+  findContact = (array, name) => {
+    return array.some(
+      (oldContact) => oldContact.name.toLowerCase() === name.toLowerCase()
+    );
   };
 
   render() {
@@ -71,7 +84,15 @@ class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
+  addContact: PropTypes.func.isRequired,
 };
 
-export default ContactForm;
+const mapStateToProps = (state, props) => ({
+  contacts: state.contacts,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  addContact: (name, phoneNum) => dispatch(addContact(name, phoneNum)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
