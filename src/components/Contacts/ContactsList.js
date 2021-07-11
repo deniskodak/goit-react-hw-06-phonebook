@@ -9,24 +9,22 @@ import { connect } from "react-redux";
 import { deleteContact } from "../../redux/actions/phoneBookActions";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-const ContactList = ({ contacts, deleteContact }) => {
-  return (
-    <TransitionGroup component="ul" className={styles.list}>
-      {contacts.map((contact) => {
-        const { id } = contact;
-        return (
-          <CSSTransition key={id} timeout={250} classNames={contactAnimation}>
-            <Contact
-              key={id}
-              contact={contact}
-              onDelete={() => deleteContact(id)}
-            />
-          </CSSTransition>
-        );
-      })}
-    </TransitionGroup>
-  );
-};
+const ContactList = ({ contacts, deleteContact }) => (
+  <TransitionGroup component="ul" className={styles.list}>
+    {contacts.map((contact) => {
+      const { id } = contact;
+      return (
+        <CSSTransition key={id} timeout={250} classNames={contactAnimation}>
+          <Contact
+            key={id}
+            contact={contact}
+            onDelete={() => deleteContact(id)}
+          />
+        </CSSTransition>
+      );
+    })}
+  </TransitionGroup>
+);
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(

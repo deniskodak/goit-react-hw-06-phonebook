@@ -5,17 +5,20 @@
 }
 
 .label:focus-within {
-  color: rgb(215 163 6 / 75%);
+  color: rgb(255 255 255 / 1);
 }
 
 .input {
   padding: 6px 8px;
   width: 250px;
+  
   font-size: 22px;
-  border: 4px double rgba(29, 23, 204, 0.55);
-  border-radius: 30%;
+
+   border: 6px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8%;
   outline: none;
 }
 .input:focus {
-  border-color: rgb(215 163 6 / 75%);
+  border-color: rgb(255 255 255 / 1);
 }

@@ -17,10 +17,10 @@ class App extends Component {
           classNames="container-fade"
         >
           <section className="app-section">
-            <h1 style={{ marginBottom: "15px" }}>Phonebook</h1>
+            <h1 className="app-title">Phonebook</h1>
             <Form />
-            <h2 style={{ marginBottom: "15px", marginTop: "15px" }}>
-              Contacts
+            <h2 className="app-title top-margin">
+              Filter your contacts
             </h2>
             <Filter />
           </section>
@@ -32,6 +32,9 @@ class App extends Component {
           classNames="container-next-fade"
         >
           <section className="app-section">
+            <h2 className="app-title">
+              Contacts
+            </h2>
             <ContactsList />
           </section>
         </CSSTransition>

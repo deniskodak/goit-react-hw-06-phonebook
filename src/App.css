@@ -8,6 +8,7 @@
 }
 
 .container {
+  padding: 40px 20px;
   display: flex;
 }
 
@@ -15,11 +16,23 @@
   width: calc(100% / 3.5);
   min-width: 300px;
   padding: 20px 20px;
-  border: 14px ridge rgba(37, 25, 204, 0.55);
-  border-radius: 32px;
+  background-image: radial-gradient(#ffeeaa, #ffaa88);
+
+  -webkit-box-shadow: 1px 3px 17px 1px rgba(0,0,0,0.67); 
+box-shadow: 1px 3px 17px 1px rgba(0,0,0,0.67);
+  overflow: hidden;
 }
 .app-section:not(:last-child) {
   margin-right: 40px;
+}
+
+.app-title {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.app-title.top-margin{
+  margin-top: 15px
 }
 /* ANIMATION STYLES */
 .container-fade-appear {

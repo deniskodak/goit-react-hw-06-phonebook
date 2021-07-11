@@ -11,12 +11,13 @@
   text-align: center;
 
   font-size: 22px;
-  border: 4px double rgba(29, 23, 204, 0.55);
-  border-radius: 30%;
+  border: 6px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8%;
   outline: none;
 }
 .input:focus {
-  border-color: rgb(215 163 6 / 75%);
+  border-color: rgb(255 255 255 / 1);
 }
 
 .label {
@@ -28,17 +29,20 @@
   margin-bottom: 15px;
 }
 .label:focus-within {
-  color: rgb(215 163 6 / 75%);
+  color: rgb(255 255 255 / 1);
 }
 .button {
   margin-left: auto;
   margin-right: auto;
   padding: 6px 10px;
 
-  color: white;
-  background: #03a9f4;
-  border-radius: 10%;
-  border-color: #6f97a8;
+  font-size: 22px;
+  
+  color: black;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8%;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 4px 5px 7px rgb(255 255 255 / 1);
   outline: none;
 
   transition: transform 300ms linear;
@@ -46,8 +50,11 @@
 .button:focus,
 .button:hover {
   transform: scale(1.15);
-  background-color: rgb(215 163 6 / 75%);
+  color: black;
+  background-color: rgb(255 255 255 / 1);
+  box-shadow: none;
 }
+
 
 .button:active {
   color: #03a9f4;
